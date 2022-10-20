@@ -1,12 +1,13 @@
 /* theme */
 
 :root {
-    --primary: #12CBC4;
+    --primary: #994890;
     --primary-light: #e7f9f9;
     --accent: #0652dd;
     --warning: #ea2027;
     --success: #009432;
     --font-family: 'Open Sans', sans-serif;
+    --font-size-small: 15px;
     --box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     --border-radius: 3px;
     --border: 1px solid #ddd;
@@ -17,7 +18,7 @@
     --gray-light: #ddd;
     --gray-dark: #444;
     --max-width: 1200px;
-    --footer-bg: #0a3db2;
+    --footer-bg: #061f38;
 }
 
 /* DEBUG */
@@ -209,11 +210,19 @@ font-size: 16px;
 .sidebar-nav li{
     padding: 10px;
     cursor: pointer;
+    font-size: var(--font-size-small) ;
+}
+
+.sidebar-nav li:hover{
+    opacity: .8;
+    transition: opacity .4s;
 }
 
 sidebar-nav li i {
    color: var(--color-dark); 
 }
+
+
 
 
 
