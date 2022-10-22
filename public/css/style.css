@@ -8,6 +8,9 @@
     --success: #009432;
     --font-family: 'Open Sans', sans-serif;
     --font-size-small: 15px;
+    --font-size-regular: 16px;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
     --box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     --border-radius: 3px;
     --border: 1px solid #ddd;
@@ -62,6 +65,11 @@ h5 {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+small {
+    font-size: var(--font-size-small);
+    font-family: var(--font-family);
 }
 
 /* Flex */
@@ -157,6 +165,10 @@ a {
     padding-bottom: 50px;
 }
 
+.pb-20 {
+    padding-bottom: 20px;
+}
+
 ul {
     list-style: none;
 }
@@ -186,10 +198,58 @@ ul {
 }
 
 .block {
-    padding: 15px;
+    padding: 20px;
     border-radius: var(--border-radius);
     background-color: white;
     box-shadow: var(--box-shadow);
+}
+
+.block-shadow:hover {
+    cursor: pointer;
+    box-shadow: none;
+    transition:  all .4s;;
+    transform: scale(1.02);
+}
+
+.form-row {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--color-dark);
+}
+
+.form-row input, textarea {
+    font-family: var(--font-family);
+    border: 0;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    background-color: var(--gray-light);
+}
+
+.form-row textarea {
+    min-height: 150px;
+}
+
+.form-errors {
+    color: var(--warning);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.avatar {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.clickable {
+color: var(--primary);
+font-weight: var(--font-weight-semi-bold);
+cursor: pointer;
 }
 
 .btn-small {
@@ -268,12 +328,23 @@ sidebar-nav a i {
     background-color: var(--primary-light);
 }
 
-
-
-
 /* FOOTER */
 
 footer {
     background-color: var(--footer-bg);
     color: var(--primary-light);
+}
+
+/* QUESTION */
+
+.question-content {
+    border-bottom: 1px solid var(--gray);
+}
+
+.rating-up{
+    color: var(--primary);
+}
+
+.rating-down {
+    color: var(--warning);
 }
