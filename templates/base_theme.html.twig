@@ -5,7 +5,7 @@
     {%- if help is not empty -%}
         {%- set widget_attr = {attr: {'aria-describedby': id ~"_help"}} -%}
     {%- endif -%}
-    {% set row-attr | merge({class: row_attr.class | default('') ~ ' form-row'}) %}
+    {%- set row_attr = row_attr | merge({class: row_attr.class | default('') ~ ' form-row'}) -%}
     <div{% with {attr: row_attr} %}{{ block('attributes') }}{% endwith %}>
         {{- form_label(form) -}} 
         {{- form_widget(form, widget_attr) -}}
@@ -16,11 +16,11 @@
 
 
 {%- block form_errors -%}
-{%- if errors/lenght > 0 -%}
-<ul>
+{%- if errors|length > 0 -%}
+<ul class="for-errors">
 {%- for error in errors -%}
 <li>{{ error.message }}</li>
 {%- endfor -%}
 </ul>
 {%- endif -%}
-{{%- endblock form_errors -%}}
+{%- endblock form_errors -%}
