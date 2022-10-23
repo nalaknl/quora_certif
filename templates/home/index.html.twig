@@ -2,6 +2,7 @@
 body %}
 <ul>
   {% for question in questions %}
+  <a href="{{path('question_show', {id: question.id})}}"></a>
   <li class="block block-shadow d-flex flex-row mb-20">
     <div class="d-flex flex-column mr-20 align-items-center">
       <i class="fas fa-arrow-up {{question.rating > 0 ?'rating-up' : ''}} "></i>
